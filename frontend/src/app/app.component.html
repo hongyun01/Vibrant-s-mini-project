@@ -1,0 +1,16 @@
+<div>
+    <h1>State Search</h1>
+    <input
+      type="text"
+      placeholder="Search for a state"
+      [(ngModel)]="searchQuery"
+      (input)="onSearch()"
+    />
+    <ul *ngIf="states.length > 0">
+      <li *ngFor="let state of states" (click)="selectState(state)">
+        {{ state.name }}
+      </li>
+    </ul>
+    <div #googleMapElement id="googleMap" style="height: 500px;"></div>
+  </div>
+  
