@@ -23,7 +23,9 @@ go run main.go
 
 ## Test Server
 ```
-curl -X POST http://localhost:8080/graphql   -H "Content-Type: application/json"   -d '{"query": "query { states(filter: \"Calif\") { id name } }"}'
+curl -X POST http://localhost:8080/graphql \
+-H "Content-Type: application/json" \
+-d '{"query": "query ($filter: String) { states(filter: $filter) { name } }", "variables": {"filter": "Calif"}}'
 ```
 
 ## Run Angular frontend server

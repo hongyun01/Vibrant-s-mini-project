@@ -38,7 +38,6 @@ export class AppComponent implements OnInit {
         query: gql`
           query($filter: String!) {
             states(filter: $filter) {
-              id
               name
             }
           }
